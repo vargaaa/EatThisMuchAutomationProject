@@ -148,7 +148,7 @@ public class HomePageTest extends BaseTest {
 
 
     @Test
-    public void homePageGeneratorNotSure() throws InterruptedException {
+    public void homePageGeneratorNotSure() {
         generalMethods = new GeneralMethods(driver);
         String expectedTitle = "The Automatic Meal Planner - Eat This Much";
         generalMethods.validatePageTitle(expectedTitle);
