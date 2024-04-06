@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class SingUpTest extends BaseTest {
+public class SingUpPageTest extends BaseTest {
     public GeneralMethods generalMethods;
 
     @Test
