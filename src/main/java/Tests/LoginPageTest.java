@@ -83,7 +83,7 @@ public class LoginPageTest extends BaseTest {
         forgotPassButton.click();
 
         WebElement emailField=driver.findElement(By.xpath("//ul[@class='_class_1ajrk_1 svelte-sb5uci']//input"));
-        emailField.sendKeys("andrei.varga22@yahoo.com");
+        emailField.sendKeys("andrei.varga182@gmail.com");
 
         WebElement recoveryPassButton=driver.findElement(By.xpath("//button[@class='_interaction_11et8_1 primary svelte-1m78l37']"));
         recoveryPassButton.click();
