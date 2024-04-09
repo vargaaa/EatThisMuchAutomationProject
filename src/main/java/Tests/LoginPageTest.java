@@ -4,14 +4,13 @@ import BaseTest.BaseTest;
 import HelpMethods.GeneralMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
-import java.util.concurrent.locks.Condition;
+
 
 public class LoginPageTest extends BaseTest {
     public GeneralMethods generalMethods;
@@ -48,7 +47,8 @@ public class LoginPageTest extends BaseTest {
         WebElement loginButton=driver.findElement(By.xpath("//button[@class='_interaction_11et8_1 primary svelte-1m78l37']"));
         loginButton.click();
 
-        Assert.assertTrue(username.getText().equals("andrei.varga182@gmail.com"),"Wrong username");
+        WebElement expectedMessage=driver.findElement(By.xpath("//div[@class='warning svelte-1vdzk1k']"));
+        Assert.assertTrue(expectedMessage.getText().equals("Please enter a correct username and password. Note that both fields may be case-sensitive."));
     }
 
     @Test
@@ -67,7 +67,8 @@ public class LoginPageTest extends BaseTest {
         WebElement loginButton=driver.findElement(By.xpath("//button[@class='_interaction_11et8_1 primary svelte-1m78l37']"));
         loginButton.click();
 
-        Assert.assertTrue(password.getText().equals("password123@"),"Wrong password");
+        WebElement expectedMessage=driver.findElement(By.xpath("//div[@class='warning svelte-1vdzk1k']"));
+        Assert.assertTrue(expectedMessage.getText().equals("Please enter a correct username and password. Note that both fields may be case-sensitive."));
     }
 
     @Test
