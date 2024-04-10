@@ -23,6 +23,8 @@ public class LoginPageTest extends BaseTest {
         WebElement loginPageRedirection=driver.findElement(By.xpath("//form[@class='form text-center no-gutters']//a[@class='sign-in-link']"));
         loginPageRedirection.click();
 
+        generalMethods.getPageTitle();
+
         WebElement username=driver.findElement(By.id("username"));
         username.sendKeys("andrei.varga182@gmail.com");
         WebElement password=driver.findElement(By.xpath("//div[@class='svelte-695ua8']/input"));
@@ -33,6 +35,12 @@ public class LoginPageTest extends BaseTest {
         WebDriverWait pageLoading= new WebDriverWait(driver,Duration.ofSeconds(10));
         pageLoading.until(ExpectedConditions.titleContains("Today"));
         generalMethods.validatePageTitle("Today");
+
+        //assert
+
+        generalMethods.getPageTitle();
+        String titlePage="Today";
+        Assert.assertTrue(driver.getTitle().equals(titlePage));
     }
 
     @Test

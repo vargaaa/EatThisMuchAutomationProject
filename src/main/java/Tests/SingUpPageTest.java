@@ -52,9 +52,6 @@ public class SingUpPageTest extends BaseTest {
         WebElement buttonHideConfirmPass = driver.findElement(By.xpath("//li[4]//button[@class='svelte-695ua8']"));
         buttonHideConfirmPass.click();
 
-        WebElement termsCheckBox = driver.findElement(By.xpath("//li[@class='terms-of-service svelte-1ntqfon']//input[@class='svelte-1o2prm5']"));
-        //termsCheckBox.click();
-
         WebElement createButton= driver.findElement(By.xpath("//p[@class='submit svelte-1ntqfon']/button"));
         createButton.click();
 
