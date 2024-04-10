@@ -8,8 +8,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 
 public class HomePageTest extends BaseTest {
@@ -35,6 +39,12 @@ public class HomePageTest extends BaseTest {
         numberOfMeals.click();
         option3Meals.click();
         generateButton.click();
+
+        String expectedTest="Put your diet on autopilot";
+        WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement text=driver.findElement(By.className("display-5"));
+        wait.until(ExpectedConditions.elementToBeClickable(text));
+        Assert.assertTrue(text.getText().contains(expectedTest));
     }
 
     @Test
@@ -57,6 +67,12 @@ public class HomePageTest extends BaseTest {
         numberOfMeals.click();
         option3Meals.click();
         generateButton.click();
+
+        String expectedTest="Put your diet on autopilot";
+        WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement text=driver.findElement(By.className("display-5"));
+        wait.until(ExpectedConditions.elementToBeClickable(text));
+        Assert.assertTrue(text.getText().contains(expectedTest));
     }
 
     @Test
@@ -79,6 +95,12 @@ public class HomePageTest extends BaseTest {
         numberOfMeals.click();
         option3Meals.click();
         generateButton.click();
+
+        String expectedTest="Put your diet on autopilot";
+        WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement text=driver.findElement(By.className("display-5"));
+        wait.until(ExpectedConditions.elementToBeClickable(text));
+        Assert.assertTrue(text.getText().contains(expectedTest));
     }
 
     @Test
@@ -101,6 +123,12 @@ public class HomePageTest extends BaseTest {
         numberOfMeals.click();
         option3Meals.click();
         generateButton.click();
+
+        String expectedTest="Put your diet on autopilot";
+        WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement text=driver.findElement(By.className("display-5"));
+        wait.until(ExpectedConditions.elementToBeClickable(text));
+        Assert.assertTrue(text.getText().contains(expectedTest));
     }
 
     @Test
@@ -123,6 +151,12 @@ public class HomePageTest extends BaseTest {
         numberOfMeals.click();
         option3Meals.click();
         generateButton.click();
+
+        String expectedTest="Put your diet on autopilot";
+        WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement text=driver.findElement(By.className("display-5"));
+        wait.until(ExpectedConditions.elementToBeClickable(text));
+        Assert.assertTrue(text.getText().contains(expectedTest));
     }
 
     @Test
@@ -145,6 +179,12 @@ public class HomePageTest extends BaseTest {
         numberOfMeals.click();
         option3Meals.click();
         generateButton.click();
+
+        String expectedTest="Put your diet on autopilot";
+        WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement text=driver.findElement(By.className("display-5"));
+        wait.until(ExpectedConditions.elementToBeClickable(text));
+        Assert.assertTrue(text.getText().contains(expectedTest));
     }
 
 
@@ -197,18 +237,18 @@ public class HomePageTest extends BaseTest {
         WebElement calculateButton = driver.findElement(By.id("calculate_button"));
         calculateButton.click();
 
+        WebElement enterGoal = driver.findElement(By.xpath("//div[@id='use_weight_goal']//label[contains(@for,'goal-1')]"));
+        enterGoal.click();
 
-        //TODO
-        //WebElement enterGoal=driver.findElement(By.xpath("//*[contains(text(), 'Yeah let's do it')]"));
-        //enterGoal.click();
+        WebElement newWeightGoal = driver.findElement(By.xpath("//input[@name='weight_goal']"));
+        newWeightGoal.sendKeys("90");
 
-//        WebElement newWeightGoal=driver.findElement(By.id("c59_weight_goal"));
-//        newWeightGoal.sendKeys("90");
-
-
-        WebElement closeButton = driver.findElement(By.className("close"));
+        WebElement closeButton = driver.findElement(By.xpath("//a[text()='Close']"));
         closeButton.click();
 
+        String expectedTest="Suggested Calories";
+        WebElement text=driver.findElement(By.xpath("//strong[contains(text(), 'Suggested Calories')]"));
+        Assert.assertTrue(text.getText().contains(expectedTest));
 
     }
 }

@@ -29,6 +29,10 @@ public class LoginPageTest extends BaseTest {
         password.sendKeys("password123@");
         WebElement loginButton=driver.findElement(By.xpath("//button[@class='_interaction_11et8_1 primary svelte-1m78l37']"));
         loginButton.click();
+
+        WebDriverWait pageLoading= new WebDriverWait(driver,Duration.ofSeconds(10));
+        pageLoading.until(ExpectedConditions.titleContains("Today"));
+        generalMethods.validatePageTitle("Today");
     }
 
     @Test

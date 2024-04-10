@@ -11,60 +11,62 @@ public class SiteNavigationTest extends BaseTest {
 
     @Test
     public void homePageTest() throws InterruptedException {
-        generalMethods= new GeneralMethods(driver);
-        String expectedTitle= "The Automatic Meal Planner - Eat This Much";
+        generalMethods = new GeneralMethods(driver);
+        String expectedTitle = "The Automatic Meal Planner - Eat This Much";
         generalMethods.validatePageTitle(expectedTitle);
 
         Thread.sleep(1500);
-        WebElement howItWorkPageRedirection=driver.findElement(By.xpath(generalMethods.homePageRedirectionsSelector(1)));
+        WebElement howItWorkPageRedirection = driver.findElement(By.xpath(generalMethods.homePageRedirectionsSelector(1)));
         howItWorkPageRedirection.click();
-        String howItWorksPage= "How it works - Eat This Much";
+        String howItWorksPage = "How it works - Eat This Much";
         generalMethods.validatePageTitle(howItWorksPage);
+        generalMethods.getPageTitle();
 
-        Thread.sleep(1500);
         generalMethods.returnToHomePage();
+        generalMethods.getPageTitle();
 
-        Thread.sleep(1500);
-        WebElement browseFoodsPageRedirection=driver.findElement(By.xpath(generalMethods.homePageRedirectionsSelector(2)));
+        WebElement browseFoodsPageRedirection = driver.findElement(By.xpath(generalMethods.homePageRedirectionsSelector(2)));
         browseFoodsPageRedirection.click();
-        String browseFoodsPage= "Food and Recipe browser - Eat This Much";
+        String browseFoodsPage = "Food and Recipe browser - Eat This Much";
         generalMethods.validatePageTitle(browseFoodsPage);
+        generalMethods.getPageTitle();
 
-        Thread.sleep(500);
         generalMethods.returnToHomePage();
+        generalMethods.getPageTitle();
 
-        Thread.sleep(500);
-        WebElement supportedDietsPageRedirection=driver.findElement(By.xpath(generalMethods.homePageRedirectionsSelector(3)));
+        WebElement supportedDietsPageRedirection = driver.findElement(By.xpath(generalMethods.homePageRedirectionsSelector(3)));
         supportedDietsPageRedirection.click();
-        String supportedDietsPage="Diet Types - Eat This Much";
+        String supportedDietsPage = "Diet Types - Eat This Much";
         generalMethods.validatePageTitle(supportedDietsPage);
+        generalMethods.getPageTitle();
 
-        Thread.sleep(500);
         generalMethods.returnToHomePage();
+        generalMethods.getPageTitle();
 
-        Thread.sleep(500);
-        WebElement forProfessionalsPageRedirection=driver.findElement(By.xpath(generalMethods.homePageRedirectionsSelector(4)));
+
+        WebElement forProfessionalsPageRedirection = driver.findElement(By.xpath(generalMethods.homePageRedirectionsSelector(4)));
         forProfessionalsPageRedirection.click();
-        String forProfessionalsPage="Meal Planner for Trainers and Dietitians - Eat This Much";
+        String forProfessionalsPage = "Meal Planner for Trainers and Dietitians - Eat This Much";
         generalMethods.validatePageTitle(forProfessionalsPage);
+        generalMethods.getPageTitle();
 
-        Thread.sleep(500);
         generalMethods.returnToHomePage();
+        generalMethods.getPageTitle();
 
-        Thread.sleep(500);
-        WebElement registerPageRedirection=driver.findElement(By.xpath("//div[@class='col-auto ']/a[@class='btn btn-block btn-orange register-button']"));
+        WebElement registerPageRedirection = driver.findElement(By.xpath("//div[@class='col-auto ']/a[@class='btn btn-block btn-orange register-button']"));
         registerPageRedirection.click();
+        generalMethods.getPageTitle();
 
-        Thread.sleep(500);
-        WebElement logoRegisterPage=driver.findElement(By.xpath("//a[@aria-label='Eat This Much']"));
+        WebElement logoRegisterPage = driver.findElement(By.xpath("//a[@aria-label='Eat This Much']"));
         logoRegisterPage.click();
+        generalMethods.getPageTitle();
 
-        Thread.sleep(500);
-        WebElement signInPageRedirection=driver.findElement(By.xpath("//form[@class='form text-center no-gutters']/a[@class='sign-in-link']"));
+        WebElement signInPageRedirection = driver.findElement(By.xpath("//form[@class='form text-center no-gutters']/a[@class='sign-in-link']"));
         signInPageRedirection.click();
+        generalMethods.getPageTitle();
 
-        Thread.sleep(500);
-        WebElement logoLoginPage=driver.findElement(By.xpath("//a[@aria-label='Eat This Much']"));
+        WebElement logoLoginPage = driver.findElement(By.xpath("//a[@aria-label='Eat This Much']"));
         logoLoginPage.click();
+        generalMethods.getPageTitle();
     }
 }

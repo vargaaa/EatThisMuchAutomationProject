@@ -31,4 +31,8 @@ public class GeneralMethods {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,250)", "");
     }
+
+    public void getPageTitle(){
+        System.out.println(driver.getTitle());
+    }
 }

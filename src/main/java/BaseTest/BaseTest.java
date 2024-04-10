@@ -22,10 +22,10 @@ public class BaseTest {
 
     //AfterMethod ruleaza dupa fiecare clasa de test
     //restore to initial state
-//    @AfterMethod
-//    public void closeDriver(){
-//        //.close() inchide doar fereastra curenta
-//        //.quit() inchide browserul
-//        driver.quit();
-//    }
+    @AfterMethod
+    public void closeDriver(){
+        //.close() inchide doar fereastra curenta
+        //.quit() inchide browserul
+        driver.quit();
+    }
 }

@@ -2,6 +2,7 @@ package Tests;
 
 import BaseTest.BaseTest;
 import HelpMethods.GeneralMethods;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -52,7 +53,13 @@ public class SingUpPageTest extends BaseTest {
         buttonHideConfirmPass.click();
 
         WebElement termsCheckBox = driver.findElement(By.xpath("//li[@class='terms-of-service svelte-1ntqfon']//input[@class='svelte-1o2prm5']"));
-        termsCheckBox.click();
+        //termsCheckBox.click();
+
+        WebElement createButton= driver.findElement(By.xpath("//p[@class='submit svelte-1ntqfon']/button"));
+        createButton.click();
+
+        generalMethods.validatePageTitle(registrationTitle);
+        System.out.println(driver.getTitle());
 
     }
 
