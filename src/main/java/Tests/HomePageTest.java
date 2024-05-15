@@ -243,12 +243,14 @@ public class HomePageTest extends BaseTest {
         WebElement newWeightGoal = driver.findElement(By.xpath("//input[@name='weight_goal']"));
         newWeightGoal.sendKeys("90");
 
-        WebElement closeButton = driver.findElement(By.xpath("//a[text()='Close']"));
-        closeButton.click();
-
         String expectedTest="Suggested Calories";
         WebElement text=driver.findElement(By.xpath("//strong[contains(text(), 'Suggested Calories')]"));
         Assert.assertTrue(text.getText().contains(expectedTest));
+
+        WebElement closeButton = driver.findElement(By.xpath("//a[text()='Close']"));
+        closeButton.click();
+
+
 
     }
 }

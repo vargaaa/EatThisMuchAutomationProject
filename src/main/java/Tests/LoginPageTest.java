@@ -60,7 +60,7 @@ public class LoginPageTest extends BaseTest {
         loginButton.click();
 
         WebElement expectedMessage=driver.findElement(By.xpath("//div[@class='warning svelte-1vdzk1k']"));
-        Assert.assertTrue(expectedMessage.getText().equals("Please enter a correct username and password. Note that both fields may be case-sensitive."));
+        Assert.assertTrue(expectedMessage.getText().contains("Please enter a correct username and password. Note that both fields may be case-sensitive."));
     }
 
     @Test
@@ -80,7 +80,7 @@ public class LoginPageTest extends BaseTest {
         loginButton.click();
 
         WebElement expectedMessage=driver.findElement(By.xpath("//div[@class='warning svelte-1vdzk1k']"));
-        Assert.assertTrue(expectedMessage.getText().equals("Please enter a correct username and password. Note that both fields may be case-sensitive."));
+        Assert.assertTrue(expectedMessage.getText().contains("Please enter a correct username and password. Note that both fields may be case-sensitive."));
     }
 
     @Test

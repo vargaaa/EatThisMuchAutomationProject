@@ -11,7 +11,6 @@ import java.time.Duration;
 public class BaseTest {
     public WebDriver driver;
 
-    //BeforeMethod ruleaza inainta fiecarei metode de test
     @BeforeMethod
     public void openSite(){
         driver= new ChromeDriver();
@@ -20,12 +19,8 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
-    //AfterMethod ruleaza dupa fiecare clasa de test
-    //restore to initial state
     @AfterMethod
     public void closeDriver(){
-        //.close() inchide doar fereastra curenta
-        //.quit() inchide browserul
         driver.quit();
     }
 }
